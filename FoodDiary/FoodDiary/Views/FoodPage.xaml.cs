@@ -16,5 +16,20 @@ namespace FoodDiary.Views
         {
             InitializeComponent();
         }
+
+        private async void btBack_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private void btQ_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AddNew_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddFood());
+        }
     }
 }

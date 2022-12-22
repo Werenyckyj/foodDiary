@@ -1,12 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodDiary.Views.FoodPage">
+             x:Class="FoodDiary.Views.FoodPage"
+             NavigationPage.HasNavigationBar="False">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="240*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="300*"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
+                <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="0" Clicked="btBack_Clicked"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="1" Grid.Row="0" Clicked="btQ_Clicked"/>
+                <Frame x:Name="outerFrame" HasShadow="False" Padding="0"
+                       Grid.ColumnSpan="2" Grid.Row="1" Margin="35,35,35,10"
+                       HorizontalOptions="FillAndExpand" CornerRadius="30" 
+                       OutlineColor="#045202" BackgroundColor="#045202" >
+                    <Frame x:Name="innerFrame" Margin="2" Padding="0" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" CornerRadius="28" 
+                            OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
+                            BackgroundColor="White" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Kalorie:" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            <Label Text="Sacharidy:" TextColor="Black" Grid.Row="1" Margin="30,10,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            <Label Text="Bílkoviny:" TextColor="Black" Grid.Row="2" Margin="30,5,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            <Label Text="Tuky:" TextColor="Black" Grid.Row="3" Margin="30,0,0,0" FontSize="16" FontFamily="RalewayM"/>
+                        </Grid>
+                    </Frame>
+                </Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="30,5,35,5" VerticalOptions="FillAndExpand" Padding="10" Grid.ColumnSpan="2" Grid.Row="2">
+                    <Image Source="plus.png" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Nový záznam" FontSize="35" FontFamily="RalewayM" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <Button x:Name="AddNew" Clicked="AddNew_Clicked" BackgroundColor="Transparent" BorderColor="#045202" CornerRadius="25" BorderWidth="3" Grid.ColumnSpan="2" Grid.Row="2" Margin="35,10,35,10"/>
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="3" Margin="35,15,35,35">
+                    <Label Text="Dnes:" TextColor="Black" FontSize="25" FontFamily="RalewayM"/>
+                    <Frame x:Name="outerFrame1" HasShadow="False" Padding="0"
+                       HorizontalOptions="FillAndExpand" CornerRadius="30"
+                       OutlineColor="#045202" BackgroundColor="#045202" >
+                        <Frame x:Name="innerFrame1" Margin="2" Padding="0" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" CornerRadius="28" 
+                            OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
+                            BackgroundColor="White">
+                            <ScrollView>
+                                <ListView>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
