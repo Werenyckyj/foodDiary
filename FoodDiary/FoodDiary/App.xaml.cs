@@ -11,6 +11,9 @@ namespace FoodDiary
             InitializeComponent();
 
             MainPage = new MainPage();
+            MainPage = new NavigationPage(new Views.FoodPage());
+            MainPage = new NavigationPage(new FoodDiary.MainPage());
+
         }
 
         protected override void OnStart()

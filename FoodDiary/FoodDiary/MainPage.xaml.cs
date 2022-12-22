@@ -13,10 +13,11 @@ namespace FoodDiary
         public MainPage()
         {
             InitializeComponent();
-            ImageButton imageButton = new ImageButton
-            {
-                Source = "diet.jpg",
-            };
+        }
+
+        private async void btFood_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.FoodPage());
         }
     }
 }

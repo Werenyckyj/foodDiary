@@ -32,6 +32,10 @@
     <None Remove="Resources\Fonts\Raleway-ThinItalic.ttf" />
     <None Remove="Resources\Fonts\Raleway-VariableFont_wght.ttf" />
     <None Remove="Resources\Images\diet.jpg" />
+    <None Remove="Resources\Images\schedule.jpg" />
+    <None Remove="Resources\Images\sports.jpg" />
+    <None Remove="Resources\Images\water.jpg" />
+    <None Remove="Resources\Image\diet.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +59,13 @@
     <EmbeddedResource Include="Resources\Fonts\Raleway-Thin.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Raleway-ThinItalic.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Raleway-VariableFont_wght.ttf" />
+    <EmbeddedResource Include="Resources\Images\diet.jpg" />
+    <EmbeddedResource Include="Resources\Images\schedule.jpg" />
+    <EmbeddedResource Include="Resources\Images\sports.jpg" />
+    <EmbeddedResource Include="Resources\Images\water.jpg" />
+    <Resource Include="Resources\Image\diet.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\diet.jpg" />
   </ItemGroup>
 
@@ -66,6 +77,11 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\FoodPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
