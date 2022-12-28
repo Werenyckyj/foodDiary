@@ -40,7 +40,10 @@ namespace FoodDiary.Views
 
         private async void Add_Clicked(object sender, EventArgs e)
         {
+            var n = new FoodPage();
             Count.todayEated.Add(Food);
+            Count.CountFood();
+            n.Out();
             await Navigation.PopAsync(); 
         }
     }

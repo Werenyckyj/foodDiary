@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,10 @@ namespace FoodDiary.Views
         private async void AddNew_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddFood());
+        }
+        public void Out()
+        {
+            cal.Text = Count.Calory.ToString();
         }
     }
 }

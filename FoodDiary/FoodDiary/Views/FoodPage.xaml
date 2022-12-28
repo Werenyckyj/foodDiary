@@ -37,7 +37,7 @@
                             </Grid.RowDefinitions>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Kalorie:" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
-                                <Label Text="xx" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                <Label x:Name="cal" Text="xx" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
                             </StackLayout>
                             <Label Text="Sacharidy:" TextColor="Black" Grid.Row="1" Margin="30,10,30,0" FontSize="16" FontFamily="RalewayM"/>
                             <Label Text="Bílkoviny:" TextColor="Black" Grid.Row="2" Margin="30,5,30,0" FontSize="16" FontFamily="RalewayM"/>
