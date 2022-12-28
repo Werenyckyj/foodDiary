@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodDiary.Views.FoodPage"
+             xmlns:custom="clr-namespace:FoodDiary.ViewModels"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
@@ -54,16 +55,18 @@
                     <Label Text="Dnes:" TextColor="Black" FontSize="25" FontFamily="RalewayM"/>
                     <Frame x:Name="outerFrame1" HasShadow="False" Padding="0"
                        HorizontalOptions="FillAndExpand" CornerRadius="30"
-                       OutlineColor="#045202" BackgroundColor="#045202" >
-                        <Frame x:Name="innerFrame1" Margin="2" Padding="0" HasShadow="False" 
+                       OutlineColor="#045202" BackgroundColor="#045202">
+                        <Frame x:Name="innerFrame1"  Margin="2" Padding="0" HasShadow="False" 
                             HorizontalOptions="FillAndExpand" CornerRadius="28" 
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
-                                <ListView>
+                                <ListView x:Name="today" ItemsSource="{Binding Food}" RowHeight="60">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
-
+                                            <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                                                <Label Text="{Binding Name}" FontFamily="RalewayM" TextColor="Black" FontSize="15" VerticalOptions="Center" Margin="15,0"/>
+                                            </custom:CustomViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
                                 </ListView>

@@ -12,9 +12,12 @@ namespace FoodDiary.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FoodPage : ContentPage
     {
+        public List<Foods> Food { get { return Count.todayEated; } }
         public FoodPage()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.ListViewModel();
+            today.ItemsSource = Count.todayEated;
         }
 
         private async void btBack_Clicked(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace FoodDiary.Views
         }
         public void Out()
         {
+            Food.Add(Count.todayEated[Count.todayEated.Count-1]);
             cal.Text = Count.Calory.ToString();
         }
     }
