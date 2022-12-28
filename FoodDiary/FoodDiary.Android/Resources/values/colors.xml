@@ -5,4 +5,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="statusTransparent">#26ff9b76</color>
+    <color name="ListViewSelected">#11B403</color>
+    <color name="ListViewHighlighted">#11B403</color>
 </resources>

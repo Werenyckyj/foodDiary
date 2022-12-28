@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.Add"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="550"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="1" Clicked="btQ_Clicked"/>
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="35,25">
+                    <Label Text="Přidání nové potraviny"  TextColor="Black" FontSize="30" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
+                    <Label Text="Údaje na 100 g"  TextColor="SlateGray" FontSize="20" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Frame BackgroundColor="White" BorderColor="LightGray" HasShadow="True" Margin="0,10,50,0" CornerRadius="20"/>
+                        <Picker TextColor="Black" Title="Vyber typ potraviny" FontFamily="RalewayM" Margin="15,20,70,10" TitleColor="Gray">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Potravina</x:String>
+                                    <x:String>Tekutina</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Kalorie:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28*"/>
+                            <ColumnDefinition Width="40*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Sacharidy:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="40*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Bílkoviny:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="75*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Tuky:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Save" Text="Uložit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15"/>
+                <Button x:Name="Back" Text="Zrušit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

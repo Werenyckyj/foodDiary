@@ -1,9 +1,14 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using System.Drawing;
+using Xamarin.Forms;
+using Xamarin.Essentials;
+using System.Threading.Tasks;
+using AndroidX.Core.View;
+using Android.Views;
 
 namespace FoodDiary.Droid
 {

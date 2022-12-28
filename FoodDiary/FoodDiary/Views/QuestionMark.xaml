@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.QuestionMark"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" BackgroundColor="#CDCDCD"/>
+                <Image Source="doubtsbutton.png" HorizontalOptions="Center" Margin="15" Grid.Row="0" VerticalOptions="CenterAndExpand" BackgroundColor="#CDCDCD" Grid.Column="0"/>
+                <ScrollView Grid.Row="1">
+                    <StackLayout Margin="35">
+                        <Label x:Name="Info" Text="Informace o jednotlivých stránkách. Co jaké tlačítko dělá atd." TextColor="Black" FontFamily="RalewayM" FontSize="18"/>
+                        <Label x:Name="InfoP" Text="U jídla a pití informace o doporučeném denním příjmu." TextColor="Black" FontFamily="RalewayM" FontSize="18"/>
+                        <Button x:Name="Back" Clicked="Back_Clicked"  Text="Zpět" VerticalOptions="EndAndExpand" Margin="30" HorizontalOptions="CenterAndExpand" BackgroundColor="White" BorderColor="#CDCDCD" BorderWidth="1" CornerRadius="15" TextColor="Black" FontFamily="RalewayM" FontSize="20"/>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

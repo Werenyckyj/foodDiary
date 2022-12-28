@@ -35,7 +35,10 @@
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="4*"/>
                             </Grid.RowDefinitions>
-                            <Label Text="Kalorie:" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Kalorie:" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                <Label Text="xx" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            </StackLayout>
                             <Label Text="Sacharidy:" TextColor="Black" Grid.Row="1" Margin="30,10,30,0" FontSize="16" FontFamily="RalewayM"/>
                             <Label Text="Bílkoviny:" TextColor="Black" Grid.Row="2" Margin="30,5,30,0" FontSize="16" FontFamily="RalewayM"/>
                             <Label Text="Tuky:" TextColor="Black" Grid.Row="3" Margin="30,0,0,0" FontSize="16" FontFamily="RalewayM"/>

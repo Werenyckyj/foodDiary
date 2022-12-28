@@ -19,5 +19,10 @@ namespace FoodDiary
         {
             await Navigation.PushAsync(new Views.FoodPage());
         }
+
+        private async void btAddFood_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.ModifiList());
+        }
     }
 }

@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FoodDiary.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FoodPage : ContentPage
+    public partial class Modifi : ContentPage
     {
-        public FoodPage()
+        public Modifi(Foods f)
         {
             InitializeComponent();
+            name.Text = f.Name;
         }
 
-        private async void btBack_Clicked(object sender, EventArgs e)
+        private async void Back_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
@@ -26,9 +28,14 @@ namespace FoodDiary.Views
             await Navigation.PushAsync(new QuestionMark());
         }
 
-        private async void AddNew_Clicked(object sender, EventArgs e)
+        private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
-            await Navigation.PushAsync(new AddFood());
+            if (string.IsNullOrEmpty(e.NewTextValue)) return;
+
+            if (!double.TryParse(e.NewTextValue, out double value))
+            {
+                ((Entry)sender).Text = e.OldTextValue;
+            }
         }
     }
 }

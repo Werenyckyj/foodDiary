@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodDiary.Views.AddFood"
+             x:Class="FoodDiary.Views.ModifiList"
              xmlns:custom="clr-namespace:FoodDiary.ViewModels"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
@@ -23,13 +23,20 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <custom:CustomViewCell SelectedItemBackgroundColor="White">
-                                    <Label Text="{Binding Name}" FontFamily="RalewayM" TextColor="Black" FontSize="15" VerticalOptions="Center" Margin="15,0"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                                        <Label Text="{Binding Name}" FontFamily="RalewayM" TextColor="Black" FontSize="15" VerticalOptions="Center" Margin="15,0"/>
+                                        <Image Source="edit.png" BackgroundColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </StackLayout>
                                 </custom:CustomViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </ScrollView>
             </Grid>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <BoxView BackgroundColor="Gray" Margin="0" HeightRequest="1"/>
+                <Button x:Name="AddNew" Clicked="AddNew_Clicked" Text="Přidat položku" FontFamily="RalewayM" Margin="0" FontSize="30" BackgroundColor="White"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
