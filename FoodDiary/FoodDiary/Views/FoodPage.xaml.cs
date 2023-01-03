@@ -36,8 +36,9 @@ namespace FoodDiary.Views
         }
         public void Out()
         {
-            Food.Add(Count.todayEated[Count.todayEated.Count-1]);
-            cal.Text = Count.Calory.ToString();
+            string s = Count.Calory.ToString();
+            calorProgress.Progress = int.Parse(s) / 2440;
+            calor.Text = s;
         }
     }
 }

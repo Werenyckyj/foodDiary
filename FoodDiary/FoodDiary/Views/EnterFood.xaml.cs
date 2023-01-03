@@ -43,8 +43,8 @@ namespace FoodDiary.Views
             var n = new FoodPage();
             Count.todayEated.Add(Food);
             Count.CountFood();
+            await Navigation.PopAsync();
             n.Out();
-            await Navigation.PopAsync(); 
         }
     }
 }

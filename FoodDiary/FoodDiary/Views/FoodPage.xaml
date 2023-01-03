@@ -36,13 +36,58 @@
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="4*"/>
                             </Grid.RowDefinitions>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Kalorie:" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
-                                <Label x:Name="cal" Text="xx" TextColor="Black" Grid.Row="0" Margin="30,20,30,0" FontSize="16" FontFamily="RalewayM"/>
+                            <StackLayout Orientation="Horizontal" Margin="30,20,30,0" Grid.Row="0">
+                                <Label Text="Kalorie:" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ProgressBar x:Name="calorProgress" ProgressColor="Green" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="70,0,0,0" ScaleY="5" ScaleX="4"/>
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                        <Label x:Name="calor" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="kcal" TextColor="White" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                    </StackLayout>
+                                </Grid>
                             </StackLayout>
-                            <Label Text="Sacharidy:" TextColor="Black" Grid.Row="1" Margin="30,10,30,0" FontSize="16" FontFamily="RalewayM"/>
-                            <Label Text="Bílkoviny:" TextColor="Black" Grid.Row="2" Margin="30,5,30,0" FontSize="16" FontFamily="RalewayM"/>
-                            <Label Text="Tuky:" TextColor="Black" Grid.Row="3" Margin="30,0,0,0" FontSize="16" FontFamily="RalewayM"/>
+                            <StackLayout Orientation="Horizontal" Margin="30,10,30,0"  Grid.Row="1">
+                                <Label Text="Sacharidy:" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ProgressBar x:Name="carboProgress" ProgressColor="DarkRed" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="60,0,0,10" ScaleY="5" ScaleX="3.55"/>
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                        <Label x:Name="carbo" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="30,5,30,0" Grid.Row="2">
+                                <Label Text="Bílkoviny:" TextColor="Black" Grid.Row="2" FontSize="16" FontFamily="RalewayM"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ProgressBar x:Name="protProgress" ProgressColor="DarkBlue" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="64,0,0,15" ScaleY="5" ScaleX="3.7"/>
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                        <Label x:Name="prot" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="30,0,0,0" Grid.Row="3">
+                                <Label Text="Tuky:" TextColor="Black" Grid.Row="3" FontSize="16" FontFamily="RalewayM"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ProgressBar x:Name="fatsProgress" ProgressColor="#746800" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="80,0,0,20" ScaleY="5" ScaleX="4.3"/>
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                        <Label x:Name="fats" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
                         </Grid>
                     </Frame>
                 </Frame>

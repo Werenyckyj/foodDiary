@@ -30,12 +30,10 @@
             <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Add" Text="Přidat" Margin="2,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
-                <Button x:Name="AddAnother" Text="Přidat další" Margin="2,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15"/>
-                <Button x:Name="Back" Text="Zrušit" Margin="2,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="2" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
+                <Button x:Name="Add" Text="Přidat" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
+                <Button x:Name="Back" Text="Zrušit" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
