@@ -22,7 +22,7 @@
                             <ColumnDefinition Width="30*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Množství:" Margin="0,30" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="input" Margin="0,30" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="OnTextChanged"/>
+                        <Entry x:Name="input" TextColor="Black" Margin="0,30" Grid.Column="1" PlaceholderColor="Black" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="OnTextChanged"/>
                         <Label Text="g" Margin="0,30" Grid.Column="2" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                     </Grid>
                 </StackLayout>

@@ -44,8 +44,8 @@
                                     </Grid.ColumnDefinitions>
                                     <ProgressBar x:Name="calorProgress" ProgressColor="Green" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="70,0,0,0" ScaleY="5" ScaleX="4"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                        <Label x:Name="calor" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
-                                        <Label Text="kcal" TextColor="White" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label x:Name="calor" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="kcal" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -57,8 +57,8 @@
                                     </Grid.ColumnDefinitions>
                                     <ProgressBar x:Name="carboProgress" ProgressColor="DarkRed" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="60,0,0,10" ScaleY="5" ScaleX="3.55"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                        <Label x:Name="carbo" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
-                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label x:Name="carbo" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -68,10 +68,10 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <ProgressBar x:Name="protProgress" ProgressColor="DarkBlue" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="64,0,0,15" ScaleY="5" ScaleX="3.7"/>
+                                    <ProgressBar x:Name="protProgress"  ProgressColor="DarkBlue" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="64,0,0,15" ScaleY="5" ScaleX="3.7"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                        <Label x:Name="prot" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
-                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label x:Name="prot" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -83,8 +83,8 @@
                                     </Grid.ColumnDefinitions>
                                     <ProgressBar x:Name="fatsProgress" ProgressColor="#746800" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="80,0,0,20" ScaleY="5" ScaleX="4.3"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                        <Label x:Name="fats" Text="0" TextColor="White" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
-                                        <Label Text="g" TextColor="white" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label x:Name="fats" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
+                                        <Label Text="g" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -106,7 +106,7 @@
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
-                                <ListView x:Name="today" ItemsSource="{Binding Food}" RowHeight="60">
+                                <ListView x:Name="today" ItemsSource="{Binding Food}" RowHeight="60" IsEnabled="False" >
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <custom:CustomViewCell SelectedItemBackgroundColor="White">

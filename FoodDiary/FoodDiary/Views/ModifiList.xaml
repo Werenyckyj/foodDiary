@@ -35,7 +35,7 @@
             </Grid>
             <StackLayout VerticalOptions="EndAndExpand">
                 <BoxView BackgroundColor="Gray" Margin="0" HeightRequest="1"/>
-                <Button x:Name="AddNew" Clicked="AddNew_Clicked" Text="Přidat položku" FontFamily="RalewayM" Margin="0" FontSize="30" BackgroundColor="White"/>
+                <Button x:Name="AddNew" Clicked="AddNew_Clicked" TextColor="Black" Text="Přidat položku" FontFamily="RalewayM" Margin="0" FontSize="30" BackgroundColor="White"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
