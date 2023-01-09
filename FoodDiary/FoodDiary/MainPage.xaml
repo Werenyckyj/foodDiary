@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <ImageButton x:Name="btFood" Clicked="btFood_Clicked" Padding="12" Source="diet.jpg" Grid.Row="0" Grid.Column="0" Margin="30, 20, 10, 10" BorderColor="#045202" BackgroundColor="White" BorderWidth="4" CornerRadius="30"/>
-            <ImageButton x:Name="btWater" Padding="10" Source="water.jpg" Grid.Row="0" Grid.Column="1" Margin="10, 20, 30, 10" BorderColor="#00205F" BackgroundColor="White" BorderWidth="4" CornerRadius="30"/>
+            <ImageButton x:Name="btWater" Clicked="btWater_Clicked" Padding="10" Source="water.jpg" Grid.Row="0" Grid.Column="1" Margin="10, 20, 30, 10" BorderColor="#00205F" BackgroundColor="White" BorderWidth="4" CornerRadius="30"/>
             <ImageButton x:Name="btSport" Padding="5" Source="sports.jpg" Grid.Row="1" Grid.Column="0" Margin="30, 10, 10, 20" BorderColor="#680202" BackgroundColor="White" BorderWidth="4" CornerRadius="30"/>
             <ImageButton x:Name="btCalendar" Padding="12" Source="schedule.jpg" Grid.Row="1" Grid.Column="1" Margin="10, 10, 30, 20" BorderColor="#84850A" BackgroundColor="White" BorderWidth="4" CornerRadius="30"/>
             <Button x:Name="btAddFood" Clicked="btAddFood_Clicked" BackgroundColor="White" TextColor="Black" BorderColor="#045202" BorderWidth="4" Padding="42,10" CornerRadius="30" Grid.Row="2" Grid.ColumnSpan="2" Margin="30, 10, 30, 20" Text="Úprava potravin" FontSize="27" FontFamily="RalewayL"/>

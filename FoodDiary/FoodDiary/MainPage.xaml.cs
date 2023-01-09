@@ -24,5 +24,10 @@ namespace FoodDiary
         {
             await Navigation.PushAsync(new Views.ModifiList());
         }
+
+        private async void btWater_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.Water());
+        }
     }
 }
