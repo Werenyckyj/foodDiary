@@ -40,11 +40,17 @@ namespace FoodDiary.Views
 
         private async void Add_Clicked(object sender, EventArgs e)
         {
-            var n = new FoodPage();
             Count.todayEated.Add(Food);
-            Count.CountFood();
+            Count.CountFood(Convert.ToDouble(input.Text));
+            if (!string.IsNullOrWhiteSpace(input.Text))
+            {
+                await App.DailyDatabase.AddNewEatedAsync(new DailyInfo
+                {
+                    TodayFood = Food,
+                    Amount = Convert.ToDouble(input.Text)
+                });
+            }
             await Navigation.PopAsync();
-            n.Out();
         }
     }
 }

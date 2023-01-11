@@ -17,15 +17,20 @@ namespace FoodDiary.Views
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             BindingContext = new ViewModels.ListViewModel();
             today.ItemsSource = Count.todayEated;
             calor.Text = Count.Calory.ToString();
+            calorProgress.Progress = Count.Calory / 2440;
             carbo.Text = Count.Carbohydrates.ToString();
+            protProgress.Progress = Count.Proteins / 2300;
             prot.Text = Count.Proteins.ToString();
+            carboProgress.Progress = Count.Carbohydrates / 670;
             fats.Text = Count.Fats.ToString();
+            fatsProgress.Progress = Count.Fats / 70;
+            today.ItemsSource = await App.Database.GetFoodAsync();
         }
 
         private async void btBack_Clicked(object sender, EventArgs e)
@@ -41,12 +46,6 @@ namespace FoodDiary.Views
         private async void AddNew_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddFood());
-        }
-        public void Out()
-        {
-            string s = Count.Calory.ToString();
-            calorProgress.Progress = int.Parse(s) / 2440;
-            calor.Text = s;
         }
     }
 }

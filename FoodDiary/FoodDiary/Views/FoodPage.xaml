@@ -55,7 +55,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <ProgressBar x:Name="carboProgress" ProgressColor="DarkRed" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="60,0,0,10" ScaleY="5" ScaleX="3.55"/>
+                                    <ProgressBar x:Name="carboProgress" ProgressColor="#8E3636" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="60,0,0,10" ScaleY="5" ScaleX="3.55"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
                                         <Label x:Name="carbo" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
                                         <Label Text="g" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
@@ -68,7 +68,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <ProgressBar x:Name="protProgress"  ProgressColor="DarkBlue" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="64,0,0,15" ScaleY="5" ScaleX="3.7"/>
+                                    <ProgressBar x:Name="protProgress"  ProgressColor="#3E3EFF" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Progress="0" Margin="64,0,0,15" ScaleY="5" ScaleX="3.7"/>
                                     <StackLayout Grid.Column="0" Orientation="Horizontal">
                                         <Label x:Name="prot" Text="0" TextColor="Black" Grid.Row="0" Margin="5,0,2,0" FontSize="16" FontFamily="RalewayM"/>
                                         <Label Text="g" TextColor="Black" Grid.Row="0" Margin="0,0,30,0" FontSize="16" FontFamily="RalewayM"/>
@@ -106,7 +106,7 @@
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
-                                <ListView x:Name="today" ItemsSource="{Binding Food}" RowHeight="60" IsEnabled="False" >
+                                <ListView x:Name="today" RowHeight="60" IsEnabled="False" >
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <custom:CustomViewCell SelectedItemBackgroundColor="White">
