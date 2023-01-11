@@ -16,8 +16,16 @@ namespace FoodDiary.Views
         public FoodPage()
         {
             InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             BindingContext = new ViewModels.ListViewModel();
             today.ItemsSource = Count.todayEated;
+            calor.Text = Count.Calory.ToString();
+            carbo.Text = Count.Carbohydrates.ToString();
+            prot.Text = Count.Proteins.ToString();
+            fats.Text = Count.Fats.ToString();
         }
 
         private async void btBack_Clicked(object sender, EventArgs e)
