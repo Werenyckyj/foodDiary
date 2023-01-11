@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FoodDiary.Models;
 
 namespace FoodDiary.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public class Foods
-    {
-        public string Name { get; set; }
-        public int Calory { get; set; }
-        public int Carbohydrates { get; set; }
-        public int Fats { get; set; }
-        public int Proteins { get; set; }
-    }
+
     public partial class AddFood : ContentPage
     {
         List<Foods> collectionOfFood = new List<Foods>();

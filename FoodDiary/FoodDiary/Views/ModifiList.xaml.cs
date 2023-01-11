@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +13,15 @@ namespace FoodDiary.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ModifiList : ContentPage
     {
-        List<Foods> collectionOfFood = new List<Foods>();
-        public List<Foods> Food { get { return collectionOfFood; } }
         public ModifiList()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.ListViewModel();
-            FoodView.ItemsSource = collectionOfFood;
-            collectionOfFood.Add(new Foods { Name = "Rohlík" });
-            collectionOfFood.Add(new Foods { Name = "Houska" });
-            collectionOfFood.Add(new Foods { Name = "Chleba" });
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            FoodView.ItemsSource = await App.Database.GetFoodAsync();
+        }
         private async void btBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();

@@ -17,6 +17,14 @@
                     <Label Text="Přidání nové potraviny"  TextColor="Black" FontSize="30" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
                     <Label Text="Údaje na 100 g"  TextColor="SlateGray" FontSize="20" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Název:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="name" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand"/>
+                    </Grid>
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
@@ -69,7 +77,7 @@
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Save" Text="Uložit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15"/>
+                <Button x:Name="Save" Text="Uložit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Save_Clicked"/>
                 <Button x:Name="Back" Text="Zrušit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
             </Grid>
         </StackLayout>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,22 @@ namespace FoodDiary.Views
 
         private async void Back_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PopAsync();
+        }
+
+        private async void Save_Clicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(inputCal.Text) && !string.IsNullOrWhiteSpace(inputCar.Text) && !string.IsNullOrWhiteSpace(inputFat.Text) && !string.IsNullOrWhiteSpace(inputPro.Text) && !string.IsNullOrWhiteSpace(name.Text))
+            {
+                await App.Database.SaveFoodAsync(new Foods
+                {
+                    Name = name.Text,
+                    Calory = int.Parse(inputCal.Text),
+                    Carbohydrates = int.Parse(inputCar.Text),
+                    Proteins = int.Parse(inputPro.Text),
+                    Fats = int.Parse(inputFat.Text)
+                });
+            }
             await Navigation.PopAsync();
         }
     }

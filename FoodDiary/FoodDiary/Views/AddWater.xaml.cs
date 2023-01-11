@@ -17,9 +17,9 @@ namespace FoodDiary.Views
             InitializeComponent();
         }
 
-        private void btQ_Clicked(object sender, EventArgs e)
+        private async void btQ_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new QuestionMark());
         }
 
         private void Add_Clicked(object sender, EventArgs e)
@@ -27,9 +27,9 @@ namespace FoodDiary.Views
 
         }
 
-        private void Back_Clicked(object sender, EventArgs e)
+        private async void Back_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
     }
 }

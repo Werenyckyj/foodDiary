@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using FoodDiary.Views;
 
 namespace FoodDiary
 {
@@ -17,17 +18,17 @@ namespace FoodDiary
 
         private async void btFood_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Views.FoodPage());
+            await Navigation.PushAsync(new FoodPage());
         }
 
         private async void btAddFood_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Views.ModifiList());
+            await Navigation.PushAsync(new ModifiList());
         }
 
         private async void btWater_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Views.Water());
+            await Navigation.PushAsync(new Water());
         }
     }
 }
