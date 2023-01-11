@@ -10,18 +10,15 @@ namespace FoodDiary.Views
 
     public partial class AddFood : ContentPage
     {
-        List<Foods> collectionOfFood = new List<Foods>();
-        public List<Foods> Food { get { return collectionOfFood; } }
         public AddFood()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.ListViewModel();
-            FoodView.ItemsSource = collectionOfFood;
-            collectionOfFood.Add(new Foods { Name = "Rohlík", Calory = 20 });
-            collectionOfFood.Add(new Foods { Name = "Houska" });
-            collectionOfFood.Add(new Foods { Name = "Chleba" });
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            FoodView.ItemsSource = await App.Database.GetFoodAsync();
+        }
         private async void btBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();

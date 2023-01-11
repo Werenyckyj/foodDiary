@@ -19,7 +19,7 @@
                 <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="0" Clicked="btBack_Clicked"/>
                 <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="1" Grid.Row="0" Clicked="btQ_Clicked"/>
                 <ScrollView Grid.ColumnSpan="2" Grid.Row="1" >
-                    <ListView x:Name="FoodView" ItemsSource="{Binding Food}" ItemTapped="FoodView_ItemTapped" RowHeight="60" SeparatorColor="Black">
+                    <ListView x:Name="FoodView" ItemTapped="FoodView_ItemTapped" RowHeight="60" SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <custom:CustomViewCell SelectedItemBackgroundColor="White">
