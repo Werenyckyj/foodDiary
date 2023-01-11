@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.AddWater"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="550"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#308EFC"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#308EFC" Grid.Column="1" Clicked="btQ_Clicked"/>
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="35,25">
+                    <Label x:Name="name" Text="Voda"  TextColor="Black" FontSize="40" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="30*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Množství:" Margin="0,30" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                        <Entry x:Name="input" TextColor="Black" Margin="0,30" Grid.Column="1" PlaceholderColor="Black" VerticalOptions="CenterAndExpand" Keyboard="Numeric"/>
+                        <Label Text="ml" Margin="0,30" Grid.Column="2" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Add" Text="Přidat" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#164072" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
+                <Button x:Name="Back" Text="Zrušit" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#164072" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

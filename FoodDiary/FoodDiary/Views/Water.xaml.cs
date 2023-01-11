@@ -17,9 +17,9 @@ namespace FoodDiary.Views
             InitializeComponent();
         }
 
-        private void AddNew_Clicked(object sender, EventArgs e)
+        private async  void AddNew_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new AddWater());
         }
 
         private async void btBack_Clicked(object sender, EventArgs e)
