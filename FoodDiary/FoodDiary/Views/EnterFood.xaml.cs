@@ -49,6 +49,7 @@ namespace FoodDiary.Views
                     Carbohydrates = Food.Carbohydrates,
                     Proteins = Food.Proteins,
                     Fats = Food.Fats,
+                    Liquid=Food.Liquid,
                     Amount = Convert.ToDouble(input.Text)
                 });
             }

@@ -30,7 +30,7 @@ namespace FoodDiary.Views
                 App.Database.AddNewEatedAsync(new DailyInfo
                 {
                     Name = "Water",
-                    Liquid = 1,
+                    Liquid = true,
                     Amount = Convert.ToDouble(input.Text)
                 });
             }
