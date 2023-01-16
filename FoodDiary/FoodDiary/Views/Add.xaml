@@ -22,14 +22,14 @@
                             <ColumnDefinition Width="70*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Název:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="name" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand"/>
+                        <Entry x:Name="name" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand"/>
                     </Grid>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Frame BackgroundColor="White" BorderColor="LightGray" HasShadow="True" Margin="0,10,50,0" CornerRadius="20"/>
-                        <Picker TextColor="Black" Title="Vyber typ potraviny" FontFamily="RalewayM" Margin="15,20,70,10" TitleColor="Gray">
+                        <Picker TextColor="Black" x:Name="type" Title="Vyber typ potraviny" FontFamily="RalewayM" Margin="15,20,70,10" TitleColor="Gray">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Potravina</x:String>
@@ -44,7 +44,7 @@
                             <ColumnDefinition Width="70*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Kalorie:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                        <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="40*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Sacharidy:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                        <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -60,7 +60,7 @@
                             <ColumnDefinition Width="40*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Bílkoviny:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                        <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -68,7 +68,7 @@
                             <ColumnDefinition Width="75*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tuky:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
+                        <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="inputCal_TextChanged"/>
                     </Grid>
                 </StackLayout>
             </Grid>

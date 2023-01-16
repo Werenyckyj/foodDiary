@@ -54,7 +54,7 @@
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
-                                <ListView x:Name="today" ItemsSource="{Binding Food}" RowHeight="60" IsEnabled="False" >
+                                <ListView x:Name="waterToday" RowHeight="60" IsEnabled="False" >
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <custom:CustomViewCell SelectedItemBackgroundColor="White">

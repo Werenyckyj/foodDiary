@@ -43,19 +43,19 @@ namespace FoodDiary.Views
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            if (inputCal.Text != "")
+            if (inputCal.Text != null)
             {
                 F.Calory = Convert.ToDouble(inputCal.Text);
             }
-            if (inputCar.Text != "")
+            if (inputCar.Text != null)
             {
                 F.Carbohydrates = Convert.ToDouble(inputCar.Text);
             }
-            if (inputPro.Text != "")
+            if (inputPro.Text != null)
             {
                 F.Proteins = Convert.ToDouble(inputPro.Text);
             }
-            if (inputFat.Text != "")
+            if (inputFat.Text != null)
             {
                 F.Fats = Convert.ToDouble(inputPro.Text);
             }

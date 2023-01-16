@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,18 @@ namespace FoodDiary.Views
             await Navigation.PushAsync(new QuestionMark());
         }
 
-        private void Add_Clicked(object sender, EventArgs e)
+        private async void Add_Clicked(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(input.Text))
+            {
+                App.Database.AddNewEatedAsync(new DailyInfo
+                {
+                    Name = "Water",
+                    Liquid = 1,
+                    Amount = Convert.ToDouble(input.Text)
+                });
+            }
+            await Navigation.PopAsync();
         }
 
         private async void Back_Clicked(object sender, EventArgs e)

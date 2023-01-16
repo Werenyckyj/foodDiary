@@ -1,9 +1,5 @@
 ﻿using FoodDiary.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -40,15 +36,21 @@ namespace FoodDiary.Views
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(inputCal.Text) && !string.IsNullOrWhiteSpace(inputCar.Text) && !string.IsNullOrWhiteSpace(inputFat.Text) && !string.IsNullOrWhiteSpace(inputPro.Text) && !string.IsNullOrWhiteSpace(name.Text))
+            if (!string.IsNullOrWhiteSpace(inputCal.Text) && !string.IsNullOrWhiteSpace(inputCar.Text) && !string.IsNullOrWhiteSpace(inputFat.Text) && !string.IsNullOrWhiteSpace(inputPro.Text) && !string.IsNullOrWhiteSpace(name.Text) && type.SelectedItem != null)
             {
+                bool l = true;
+                if (type.SelectedIndex == 0)
+                {
+                    l = false;
+                }
                 App.Database.SaveFoodAsync(new Foods
                 {
                     Name = name.Text,
                     Calory = int.Parse(inputCal.Text),
                     Carbohydrates = int.Parse(inputCar.Text),
                     Proteins = int.Parse(inputPro.Text),
-                    Fats = int.Parse(inputFat.Text)
+                    Fats = int.Parse(inputFat.Text),
+                    Liquid = l
                 });
             }
             await Navigation.PopAsync();
