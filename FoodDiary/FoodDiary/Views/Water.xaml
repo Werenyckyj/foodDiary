@@ -32,9 +32,10 @@
                             <Label Text="Tekutiny:" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="150"/>
                                 </Grid.RowDefinitions>
-                                <ProgressBar Grid.Row="0" BackgroundColor="Gray" HorizontalOptions="EndAndExpand"/>
+                                <ProgressBar x:Name="progress" Grid.Row="0" HorizontalOptions="Center" Progress="0" ScaleY="65" ProgressColor="#308EFC" ScaleX="3" Rotation="270"/>
+                                <Label Grid.Row="0" x:Name="drank" Text="0 ml" TextColor="Black" Margin="0,0,0,10" FontSize="16" FontFamily="RalewayM" HorizontalOptions="Center" VerticalOptions="End"/>
                             </Grid>
                         </StackLayout>
                     </Frame>

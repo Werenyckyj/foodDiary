@@ -22,7 +22,7 @@
                             <ColumnDefinition Width="70*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Kalorie:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
+                        <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
                             <ColumnDefinition Width="40*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Sacharidy:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
+                        <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -38,7 +38,7 @@
                             <ColumnDefinition Width="40*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Bílkoviny:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
+                        <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
                             <ColumnDefinition Width="75*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tuky:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
-                        <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
+                        <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                 </StackLayout>
             </Grid>

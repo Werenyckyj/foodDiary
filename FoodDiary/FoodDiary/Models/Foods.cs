@@ -16,5 +16,6 @@ namespace FoodDiary.Models
         public double Fats { get; set; }
         public double Proteins { get; set; }
         public bool Liquid { get; set; }
+        public double Amount { get; set; }
     }
 }

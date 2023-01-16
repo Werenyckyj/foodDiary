@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FoodDiary.Models;
+﻿using FoodDiary.Models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -49,7 +45,7 @@ namespace FoodDiary.Views
                     Carbohydrates = Food.Carbohydrates,
                     Proteins = Food.Proteins,
                     Fats = Food.Fats,
-                    Liquid=Food.Liquid,
+                    Liquid = Food.Liquid,
                     Amount = Convert.ToDouble(input.Text)
                 });
             }

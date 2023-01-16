@@ -32,7 +32,8 @@ namespace FoodDiary.Models
                 {
                     todayDrenk.Add(new Foods
                     {
-                        Name = "Voda"
+                        Name = "Voda",
+                        Amount = food.Amount
                     });
                     continue;
                 }
@@ -40,7 +41,8 @@ namespace FoodDiary.Models
                 {
                     todayDrenk.Add(new Foods
                     {
-                        Name = food.Name
+                        Name = food.Name,
+                        Amount = food.Amount
                     });
                 }
                 todayEated.Add(new Foods
@@ -56,6 +58,15 @@ namespace FoodDiary.Models
                 Fats += food.Fats / 100 * food.Amount;
                 Proteins += food.Proteins / 100 * food.Amount;
             }
+        }
+        public static double CountLiquid()
+        {
+            double total = 0;
+            foreach (var item in todayDrenk)
+            {
+                total += item.Amount;
+            }
+            return total;
         }
     }
 }

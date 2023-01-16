@@ -23,6 +23,8 @@ namespace FoodDiary.Views
             Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
             waterToday.ItemsSource = Count.todayDrenk;
+            drank.Text = Count.CountLiquid().ToString() + " ml";
+            progress.Progress = Count.CountLiquid() / 2500;
         }
         private async  void AddNew_Clicked(object sender, EventArgs e)
         {
