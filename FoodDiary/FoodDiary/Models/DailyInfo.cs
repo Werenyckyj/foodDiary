@@ -11,7 +11,11 @@ namespace FoodDiary.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public Foods TodayFood { get; set; }
         public double Amount { get; set; }
+        public string Name { get; set; }
+        public double Calory { get; set; }
+        public double Carbohydrates { get; set; }
+        public double Fats { get; set; }
+        public double Proteins { get; set; }
     }
 }

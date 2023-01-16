@@ -42,9 +42,13 @@ namespace FoodDiary.Views
         {
             if (!string.IsNullOrWhiteSpace(input.Text))
             {
-                await App.Database.AddNewEatedAsync(new DailyInfo
+                App.Database.AddNewEatedAsync(new DailyInfo
                 {
-                    TodayFood = Food,
+                    Name = Food.Name,
+                    Calory = Food.Calory,
+                    Carbohydrates = Food.Carbohydrates,
+                    Proteins = Food.Proteins,
+                    Fats = Food.Fats,
                     Amount = Convert.ToDouble(input.Text)
                 });
             }

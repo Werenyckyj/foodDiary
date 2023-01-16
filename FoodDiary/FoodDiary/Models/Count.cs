@@ -1,7 +1,4 @@
-﻿using FoodDiary.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace FoodDiary.Models
 {
@@ -15,13 +12,25 @@ namespace FoodDiary.Models
         public async static void CountFood()
         {
             List<DailyInfo> dailyInfo = await App.Database.GetTodayFoodAsync();
+            todayEated.Clear();
+            Calory = 0;
+            Carbohydrates = 0;
+            Fats = 0;
+            Proteins = 0;
             foreach (var food in dailyInfo)
             {
-                todayEated.Add(food.TodayFood);
-                Calory +=  food.TodayFood.Calory / 100 * food.Amount;
-                Carbohydrates += food.TodayFood.Carbohydrates / 100 * food.Amount;
-                Fats += food.TodayFood.Fats / 100 * food.Amount;
-                Proteins += food.TodayFood.Proteins / 100 * food.Amount;
+                todayEated.Add(new Foods
+                {
+                    Name = food.Name,
+                    Calory = food.Calory,
+                    Carbohydrates = food.Carbohydrates,
+                    Proteins = food.Proteins,
+                    Fats = food.Fats
+                });
+                Calory += food.Calory / 100 * food.Amount;
+                Carbohydrates += food.Carbohydrates / 100 * food.Amount;
+                Fats += food.Fats / 100 * food.Amount;
+                Proteins += food.Proteins / 100 * food.Amount;
             }
         }
     }

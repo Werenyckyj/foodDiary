@@ -1,45 +1,41 @@
 ﻿using SQLite;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace FoodDiary.Models
 {
     public class Database
     {
-        private readonly SQLiteAsyncConnection _database;
+        private readonly SQLiteAsyncConnection database;
 
         public Database(string dbPath)
         {
-            _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<DailyInfo>();
-            _database.CreateTableAsync<Foods>();
+            database = new SQLiteAsyncConnection(dbPath);
+            database.CreateTableAsync<DailyInfo>();
+            database.CreateTableAsync<Foods>();
         }
         public Task<List<Foods>> GetFoodAsync()
         {
-            return _database.Table<Foods>().ToListAsync();
+            Task<List<Foods>> d = database.Table<Foods>().ToListAsync();
+            return d;
         }
-        public Task<int> SaveFoodAsync(Foods food)
+        public void SaveFoodAsync(Foods food)
         {
-            return _database.InsertAsync(food);
+            database.InsertAsync(food);
         }
         public Task<List<DailyInfo>> GetTodayFoodAsync()
         {
-            return _database.Table<DailyInfo>().ToListAsync();
+            Task<List<DailyInfo>> d = database.Table<DailyInfo>().ToListAsync();
+            return d;
         }
-        public Task<int> AddNewEatedAsync(DailyInfo dailyInfo)
+        public void AddNewEatedAsync(DailyInfo dailyInfo)
         {
-            return _database.InsertAsync(dailyInfo);
+            database.InsertAsync(dailyInfo);
         }
-    }
-    public class DailyDatabase
-    {
-        private readonly SQLiteAsyncConnection _dDatabase;
-        public DailyDatabase(string ddbPath)
+        public void EditData(Foods editedFood)
         {
-            _dDatabase = new SQLiteAsyncConnection(ddbPath);
-            _dDatabase.CreateTableAsync<DailyInfo>();
+            database.UpdateAsync(editedFood);
         }
-
-
     }
 }

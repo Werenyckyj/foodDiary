@@ -13,10 +13,12 @@ namespace FoodDiary.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Modifi : ContentPage
     {
+        public Foods F { get; set; }
         public Modifi(Foods f)
         {
             InitializeComponent();
-            name.Text = f.Name;
+            F = f;
+            name.Text = F.Name;
         }
 
         private async void Back_Clicked(object sender, EventArgs e)
@@ -37,6 +39,29 @@ namespace FoodDiary.Views
             {
                 ((Entry)sender).Text = e.OldTextValue;
             }
+        }
+
+        private async void Save_Clicked(object sender, EventArgs e)
+        {
+            if (inputCal.Text != "")
+            {
+                F.Calory = Convert.ToDouble(inputCal.Text);
+            }
+            if (inputCar.Text != "")
+            {
+                F.Carbohydrates = Convert.ToDouble(inputCar.Text);
+            }
+            if (inputPro.Text != "")
+            {
+                F.Proteins = Convert.ToDouble(inputPro.Text);
+            }
+            if (inputFat.Text != "")
+            {
+                F.Fats = Convert.ToDouble(inputPro.Text);
+            }
+            App.Database.EditData(F);
+
+            await Navigation.PopAsync();
         }
     }
 }

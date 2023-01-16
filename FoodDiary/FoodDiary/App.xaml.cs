@@ -9,7 +9,6 @@ namespace FoodDiary
     public partial class App : Application
     {
         private static Database database;
-        private static DailyDatabase dDatabase;
         public static Database Database
         {
             get
@@ -19,17 +18,6 @@ namespace FoodDiary
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "food.db3"));
                 }
                 return database;
-            }
-        }
-        public static DailyDatabase DailyDatabase
-        {
-            get
-            {
-                if (dDatabase == null)
-                {
-                    dDatabase = new DailyDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "today.db3"));
-                }
-                return dDatabase;
             }
         }
         public App()

@@ -42,7 +42,7 @@ namespace FoodDiary.Views
         {
             if (!string.IsNullOrWhiteSpace(inputCal.Text) && !string.IsNullOrWhiteSpace(inputCar.Text) && !string.IsNullOrWhiteSpace(inputFat.Text) && !string.IsNullOrWhiteSpace(inputPro.Text) && !string.IsNullOrWhiteSpace(name.Text))
             {
-                await App.Database.SaveFoodAsync(new Foods
+                App.Database.SaveFoodAsync(new Foods
                 {
                     Name = name.Text,
                     Calory = int.Parse(inputCal.Text),
