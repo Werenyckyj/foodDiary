@@ -40,11 +40,9 @@ namespace FoodDiary.Views
 
         private async void Add_Clicked(object sender, EventArgs e)
         {
-            Count.todayEated.Add(Food);
-            Count.CountFood(Convert.ToDouble(input.Text));
             if (!string.IsNullOrWhiteSpace(input.Text))
             {
-                await App.DailyDatabase.AddNewEatedAsync(new DailyInfo
+                await App.Database.AddNewEatedAsync(new DailyInfo
                 {
                     TodayFood = Food,
                     Amount = Convert.ToDouble(input.Text)

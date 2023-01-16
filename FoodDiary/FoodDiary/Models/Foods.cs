@@ -5,6 +5,7 @@ using SQLite;
 
 namespace FoodDiary.Models
 {
+    [Table("Foods")]
     public class Foods
     {
         [PrimaryKey, AutoIncrement]

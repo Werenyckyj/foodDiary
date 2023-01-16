@@ -17,9 +17,10 @@ namespace FoodDiary.Views
         {
             InitializeComponent();
         }
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
+            Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
             today.ItemsSource = Count.todayEated;
             calor.Text = Count.Calory.ToString();
@@ -30,7 +31,10 @@ namespace FoodDiary.Views
             carboProgress.Progress = Count.Carbohydrates / 670;
             fats.Text = Count.Fats.ToString();
             fatsProgress.Progress = Count.Fats / 70;
-            today.ItemsSource = await App.Database.GetFoodAsync();
+        }
+        public void Updater()
+        {
+            OnAppearing();
         }
 
         private async void btBack_Clicked(object sender, EventArgs e)

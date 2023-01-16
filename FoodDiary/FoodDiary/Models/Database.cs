@@ -11,6 +11,7 @@ namespace FoodDiary.Models
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
+            _database.CreateTableAsync<DailyInfo>();
             _database.CreateTableAsync<Foods>();
         }
         public Task<List<Foods>> GetFoodAsync()
@@ -21,28 +22,24 @@ namespace FoodDiary.Models
         {
             return _database.InsertAsync(food);
         }
-    }
-    public class DailyDatabase
-    {
-        private readonly SQLiteAsyncConnection _database;
-        public DailyDatabase(string ddbPath)
+        public Task<List<DailyInfo>> GetTodayFoodAsync()
         {
-            _database = new SQLiteAsyncConnection(ddbPath);
-            _database.CreateTableAsync<DailyInfo>();
+            return _database.Table<DailyInfo>().ToListAsync();
         }
         public Task<int> AddNewEatedAsync(DailyInfo dailyInfo)
         {
             return _database.InsertAsync(dailyInfo);
         }
-        public Task<List<Foods>> GetTodayFoodAsync()
+    }
+    public class DailyDatabase
+    {
+        private readonly SQLiteAsyncConnection _dDatabase;
+        public DailyDatabase(string ddbPath)
         {
-            List<DailyInfo> todayEated = _database.Table<DailyInfo>().ToListAsync();
-            List<Foods> todayFood = new List<Foods>();
-            foreach (var item in todayEated)
-            {
-                todayFood.Add(item.TodayFood);
-            }
-            return todayFood;
+            _dDatabase = new SQLiteAsyncConnection(ddbPath);
+            _dDatabase.CreateTableAsync<DailyInfo>();
         }
+
+
     }
 }

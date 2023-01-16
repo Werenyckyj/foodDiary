@@ -20,7 +20,7 @@ namespace FoodDiary.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            FoodView.ItemsSource = await App.DailyDatabase.GetTodayFoodAsync();
+            FoodView.ItemsSource = await App.Database.GetFoodAsync();
         }
         private async void btBack_Clicked(object sender, EventArgs e)
         {

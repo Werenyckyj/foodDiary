@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodDiary.Models
 {
+    [Table("DailyInfo")]
     public class DailyInfo
     {
         [PrimaryKey, AutoIncrement]

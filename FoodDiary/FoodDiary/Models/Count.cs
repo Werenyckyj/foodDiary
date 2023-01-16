@@ -12,12 +12,17 @@ namespace FoodDiary.Models
         public static double Carbohydrates { get; set; }
         public static double Fats { get; set; }
         public static double Proteins { get; set; }
-        public static void CountFood(double exp)
+        public async static void CountFood()
         {
-            Calory += todayEated[todayEated.Count - 1].Calory / 100 * exp;
-            Carbohydrates += todayEated[todayEated.Count - 1].Carbohydrates / 100 * exp;
-            Fats += todayEated[todayEated.Count - 1].Fats / 100 * exp;
-            Proteins += todayEated[todayEated.Count - 1].Proteins / 100 * exp;
+            List<DailyInfo> dailyInfo = await App.Database.GetTodayFoodAsync();
+            foreach (var food in dailyInfo)
+            {
+                todayEated.Add(food.TodayFood);
+                Calory +=  food.TodayFood.Calory / 100 * food.Amount;
+                Carbohydrates += food.TodayFood.Carbohydrates / 100 * food.Amount;
+                Fats += food.TodayFood.Fats / 100 * food.Amount;
+                Proteins += food.TodayFood.Proteins / 100 * food.Amount;
+            }
         }
     }
 }

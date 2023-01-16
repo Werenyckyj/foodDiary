@@ -21,6 +21,8 @@ namespace FoodDiary.Views
         }
         private async void btBack_Clicked(object sender, EventArgs e)
         {
+            FoodPage f = new FoodPage();
+            f.Updater();
             await Navigation.PopAsync();
         }
 
