@@ -59,7 +59,16 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <custom:CustomViewCell SelectedItemBackgroundColor="White">
-                                                <Label Text="{Binding Name}" FontFamily="RalewayM" TextColor="Black" FontSize="15" VerticalOptions="Center" Margin="15,0"/>
+                                                <Label VerticalOptions="Center" Margin="15,0">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="15"/>
+                                                            <Span Text="  Množství: " FontFamily="RalewayM" TextColor="Black" FontSize="15"/>
+                                                            <Span Text="{Binding Amount}" FontFamily="RalewayM" TextColor="Black" FontSize="15"/>
+                                                            <Span Text=" ml" FontFamily="RalewayM" TextColor="Black" FontSize="15"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
                                             </custom:CustomViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
