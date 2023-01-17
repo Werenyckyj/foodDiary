@@ -299,7 +299,7 @@
                 Carbohydrates = 5,
                 Proteins = 3,
                 Fats = 2,
-                Liquid = false
+                Liquid = true
             });
             d.InsertAsync(new Foods
             {
@@ -308,7 +308,7 @@
                 Carbohydrates = 5,
                 Proteins = 3,
                 Fats = 4,
-                Liquid = false
+                Liquid = true
             });
             d.InsertAsync(new Foods
             {
@@ -317,7 +317,7 @@
                 Carbohydrates = 4,
                 Proteins = 3,
                 Fats = 12,
-                Liquid = false
+                Liquid = true
             });
             d.InsertAsync(new Foods
             {
@@ -326,7 +326,7 @@
                 Carbohydrates = 3,
                 Proteins = 2,
                 Fats = 31,
-                Liquid = false
+                Liquid = true
             });
             d.InsertAsync(new Foods
             {
