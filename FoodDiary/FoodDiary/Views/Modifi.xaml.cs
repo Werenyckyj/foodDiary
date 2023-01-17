@@ -19,6 +19,10 @@ namespace FoodDiary.Views
             InitializeComponent();
             F = f;
             name.Text = F.Name;
+            inputCal.Text = f.Calory.ToString();
+            inputCar.Text = f.Carbohydrates.ToString();
+            inputPro.Text = f.Proteins.ToString();
+            inputFat.Text = f.Fats.ToString();
         }
 
         private async void Back_Clicked(object sender, EventArgs e)

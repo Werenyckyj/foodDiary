@@ -14,6 +14,7 @@ namespace FoodDiary.Models
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<DailyInfo>();
             database.CreateTableAsync<Foods>();
+            FillDatabase.InsertDefault(database);
         }
         public Task<List<Foods>> GetFoodAsync()
         {
