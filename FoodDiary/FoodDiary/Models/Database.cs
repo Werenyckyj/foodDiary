@@ -59,5 +59,10 @@ namespace FoodDiary.Models
         {
             database.UpdateAsync(editedFood);
         }
+        public void DeleteToday()
+        {
+            database.DeleteAllAsync<DailyInfo>();
+            database.DeleteAllAsync<Sport>();
+        }
     }
 }

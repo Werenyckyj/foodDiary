@@ -23,7 +23,7 @@ namespace FoodDiary.Views
             calor.Text = Count.Calory.ToString();
             calorProgress.Progress = Count.Calory / 2440;
             carbo.Text = Count.Carbohydrates.ToString();
-            protProgress.Progress = Count.Proteins / 2300;
+            protProgress.Progress = Count.Proteins / 80;
             prot.Text = Count.Proteins.ToString();
             carboProgress.Progress = Count.Carbohydrates / 670;
             fats.Text = Count.Fats.ToString();
