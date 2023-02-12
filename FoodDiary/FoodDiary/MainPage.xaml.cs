@@ -35,5 +35,10 @@ namespace FoodDiary
         {
             await Navigation.PushAsync(new SportsList());
         }
+
+        private async void btCalendar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Calendar());
+        }
     }
 }

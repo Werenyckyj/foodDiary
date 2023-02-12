@@ -33,6 +33,12 @@ namespace FoodDiary.Views
                     Liquid = true,
                     Amount = Convert.ToDouble(input.Text)
                 });
+                App.Database.SaveEternaly(new AllOverInfo
+                {
+                    Name = "Water",
+                    Liquid = true,
+                    Amount = Convert.ToDouble(input.Text)
+                });
             }
             await Navigation.PopAsync();
         }

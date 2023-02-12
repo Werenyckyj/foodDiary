@@ -16,6 +16,7 @@ namespace FoodDiary.Models
             database.CreateTableAsync<DailyInfo>();
             database.CreateTableAsync<Foods>();
             database.CreateTableAsync<Sport>();
+            database.CreateTableAsync<AllOverInfo>();
             FillDatabase.InsertDefault(database);
         }
         public Task<List<Foods>> GetFoodAsync()
@@ -27,10 +28,18 @@ namespace FoodDiary.Models
         {
             database.InsertAsync(food);
         }
-
         internal void SaveSoprtAsync(Sport sport)
         {
             database.InsertAsync(sport);
+        }
+        public void SaveEternaly(AllOverInfo allOverInfo)
+        {
+            database.InsertAsync(allOverInfo);
+        }
+        public Task<List<AllOverInfo>> GetAllOverInfo()
+        {
+            Task<List<AllOverInfo>> d = database.Table<AllOverInfo>().ToListAsync();
+            return d;
         }
         public Task<List<Sport>> GetTodaySportsAsync()
         {

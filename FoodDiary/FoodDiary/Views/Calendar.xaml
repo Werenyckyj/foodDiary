@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.Calendar"
+             xmlns:custom="clr-namespace:FoodDiary.ViewModels"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#F0B723"/>
+                <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#F0B723" Grid.Column="0" Clicked="btBack_Clicked"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#F0B723" Grid.Column="1" Grid.Row="0" Clicked="btQ_Clicked"/>
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="1" Margin="35,15,35,35">
+                    <syncfusion:SfCalendar x:Name="calendar" BackgroundColor="White" ViewMode="MonthView" ShowLeadingAndTrailingDays="True">
+                        <syncfusion:SfCalendar.MonthViewSettings>
+                            <syncfusion:MonthViewSettings DateSelectionColor="#F0B723" SelectedDayTextColor="Black" TodaySelectionBackgroundColor="#F0B723" TodaySelectionTextColor="Black"/>
+                        </syncfusion:SfCalendar.MonthViewSettings>
+                    </syncfusion:SfCalendar>
+                    <Frame x:Name="outerFrame" HasShadow="False" Padding="0"
+                       HorizontalOptions="FillAndExpand" CornerRadius="30"
+                       OutlineColor="#F0B723" BackgroundColor="#F0B723">
+                        <Frame x:Name="innerFrame"  Margin="2" Padding="0" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" CornerRadius="28" 
+                            OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
+                            BackgroundColor="White">
+                            <ScrollView>
+                                <ListView x:Name="sportToday" RowHeight="60" IsEnabled="true" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                                                <Label VerticalOptions="Center" Margin="15,0">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="15"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </custom:CustomViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

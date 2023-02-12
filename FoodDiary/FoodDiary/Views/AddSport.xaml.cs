@@ -34,6 +34,14 @@ namespace FoodDiary.Views
                     EndTime = inputETime.Time.ToString(),
                     Note = note.Text
                 });
+                App.Database.SaveEternaly(new AllOverInfo
+                {
+                    Name = inputName.Text,
+                    StartTime = inputSTime.Time.ToString(),
+                    EndTime = inputETime.Time.ToString(),
+                    Note = note.Text,
+                    IsSport = true
+                });
             }
             await Navigation.PopAsync();
         }

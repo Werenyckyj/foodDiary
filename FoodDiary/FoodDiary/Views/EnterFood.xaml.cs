@@ -48,6 +48,16 @@ namespace FoodDiary.Views
                     Liquid = Food.Liquid,
                     Amount = Convert.ToDouble(input.Text)
                 });
+                App.Database.SaveEternaly(new AllOverInfo
+                {
+                    Name = Food.Name,
+                    Calory = Food.Calory,
+                    Carbohydrates = Food.Carbohydrates,
+                    Proteins = Food.Proteins,
+                    Fats = Food.Fats,
+                    Liquid = Food.Liquid,
+                    Amount = Convert.ToDouble(input.Text)
+                });
             }
             await Navigation.PopAsync();
         }
