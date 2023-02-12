@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.AddSport"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="600"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#FC3030"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#FC3030" Grid.Column="1" Clicked="btQ_Clicked"/>
+                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="2" Margin="35 ,40">
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Název sportu:" Margin="0,20" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                            <Entry x:Name="inputName" WidthRequest="120" TextColor="Black" Margin="0,20" Grid.Column="1" PlaceholderColor="Black" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Začátek aktivity:" Margin="0,20" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                            <TimePicker x:Name="inputSTime" WidthRequest="120" TextColor="Black" Margin="0,15" Grid.Column="1" FontSize="25" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Konec aktivity:" Margin="0,20" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
+                            <TimePicker x:Name="inputETime" WidthRequest="120" TextColor="Black" Margin="0,15" Grid.Column="1" FontSize="25" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Frame x:Name="outerFrame" HasShadow="False" Padding="0" Margin="0, 15, 0, 0"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="30"
+                       OutlineColor="#721616" BackgroundColor="#721616">
+                        <Frame x:Name="innerFrame"  Margin="2" Padding="0" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="28" 
+                            OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
+                            BackgroundColor="White">
+                            <StackLayout>
+                                <ScrollView>
+                                    <Editor x:Name="note" Margin="20" PlaceholderColor="Gray" VerticalOptions="EndAndExpand" Placeholder="Poznámka:"/>
+                                </ScrollView>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Add" Text="Přidat" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#721616" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
+                <Button x:Name="Back" Text="Zrušit" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#721616" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

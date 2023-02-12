@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace FoodDiary.Models
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<DailyInfo>();
             database.CreateTableAsync<Foods>();
+            database.CreateTableAsync<Sport>();
             FillDatabase.InsertDefault(database);
         }
         public Task<List<Foods>> GetFoodAsync()
@@ -24,6 +26,16 @@ namespace FoodDiary.Models
         public void SaveFoodAsync(Foods food)
         {
             database.InsertAsync(food);
+        }
+
+        internal void SaveSoprtAsync(Sport sport)
+        {
+            database.InsertAsync(sport);
+        }
+        public Task<List<Sport>> GetTodaySportsAsync()
+        {
+            Task<List<Sport>> d = database.Table<Sport>().ToListAsync();
+            return d;
         }
         public Task<List<DailyInfo>> GetTodayFoodAsync()
         {

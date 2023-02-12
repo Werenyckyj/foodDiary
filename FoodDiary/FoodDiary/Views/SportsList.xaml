@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDiary.Views.SportsList"
+             xmlns:custom="clr-namespace:FoodDiary.ViewModels"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="300*"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#FC3030"/>
+                <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#FC3030" Grid.Column="0" Clicked="btBack_Clicked"/>
+                <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#FC3030" Grid.Column="1" Grid.Row="0" Clicked="btQ_Clicked"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="30,50,35,5" VerticalOptions="FillAndExpand" Padding="10" Grid.ColumnSpan="2" Grid.Row="1">
+                    <Image Source="plus3.png" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Nový záznam" FontSize="35" FontFamily="RalewayM" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <Button x:Name="AddNew" Clicked="AddNew_Clicked" BackgroundColor="Transparent" BorderColor="#721616" CornerRadius="30" BorderWidth="3" Grid.ColumnSpan="2" Grid.Row="1" Margin="35,55,35,10"/>
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="2" Margin="35,15,35,35">
+                    <Label Text="Dnes:" TextColor="Black" FontSize="25" FontFamily="RalewayM"/>
+                    <Frame x:Name="outerFrame" HasShadow="False" Padding="0"
+                       HorizontalOptions="FillAndExpand" CornerRadius="30"
+                       OutlineColor="#721616" BackgroundColor="#721616">
+                        <Frame x:Name="innerFrame"  Margin="2" Padding="0" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" CornerRadius="28" 
+                            OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
+                            BackgroundColor="White">
+                            <ScrollView>
+                                <ListView x:Name="sportToday" RowHeight="60" ItemTapped="sportToday_ItemTapped" IsEnabled="true" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                                                <Label VerticalOptions="Center" Margin="15,0">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="15"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </custom:CustomViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
