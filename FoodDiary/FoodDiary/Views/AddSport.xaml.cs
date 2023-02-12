@@ -40,7 +40,8 @@ namespace FoodDiary.Views
                     StartTime = inputSTime.Time.ToString(),
                     EndTime = inputETime.Time.ToString(),
                     Note = note.Text,
-                    IsSport = true
+                    IsSport = true,
+                    Date = DateTime.Today
                 });
             }
             await Navigation.PopAsync();

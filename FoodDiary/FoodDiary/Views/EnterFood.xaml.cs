@@ -56,7 +56,9 @@ namespace FoodDiary.Views
                     Proteins = Food.Proteins,
                     Fats = Food.Fats,
                     Liquid = Food.Liquid,
-                    Amount = Convert.ToDouble(input.Text)
+                    Amount = Convert.ToDouble(input.Text),
+                    Date = DateTime.Today,
+                    IsSport = false
                 });
             }
             await Navigation.PopAsync();

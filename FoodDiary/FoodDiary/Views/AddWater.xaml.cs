@@ -37,7 +37,9 @@ namespace FoodDiary.Views
                 {
                     Name = "Water",
                     Liquid = true,
-                    Amount = Convert.ToDouble(input.Text)
+                    Amount = Convert.ToDouble(input.Text),
+                    Date = DateTime.Today,
+                    IsSport = false
                 });
             }
             await Navigation.PopAsync();

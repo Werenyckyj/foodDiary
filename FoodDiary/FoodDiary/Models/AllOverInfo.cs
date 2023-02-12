@@ -20,7 +20,7 @@ namespace FoodDiary.Models
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         public string Note { get; set; }
-        public bool IsSport = false;
+        public bool IsSport { get; set; }
         public DateTime Date { get; set; }
     }
 }

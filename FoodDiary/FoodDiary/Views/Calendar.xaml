@@ -20,7 +20,7 @@
                 <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#F0B723" Grid.Column="0" Clicked="btBack_Clicked"/>
                 <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#F0B723" Grid.Column="1" Grid.Row="0" Clicked="btQ_Clicked"/>
                 <StackLayout Grid.ColumnSpan="2" Grid.Row="1" Margin="35,15,35,35">
-                    <syncfusion:SfCalendar x:Name="calendar" BackgroundColor="White" ViewMode="MonthView" ShowLeadingAndTrailingDays="True">
+                    <syncfusion:SfCalendar x:Name="calendar" BackgroundColor="White" ViewMode="MonthView" ShowLeadingAndTrailingDays="True" FirstDayofWeek="1" OnCalendarTapped="calendar_OnCalendarTapped">
                         <syncfusion:SfCalendar.MonthViewSettings>
                             <syncfusion:MonthViewSettings DateSelectionColor="#F0B723" SelectedDayTextColor="Black" TodaySelectionBackgroundColor="#F0B723" TodaySelectionTextColor="Black"/>
                         </syncfusion:SfCalendar.MonthViewSettings>
@@ -33,21 +33,86 @@
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
-                                <ListView x:Name="sportToday" RowHeight="60" IsEnabled="true" >
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <custom:CustomViewCell SelectedItemBackgroundColor="White">
-                                                <Label VerticalOptions="Center" Margin="15,0">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="15"/>
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
-                                            </custom:CustomViewCell>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
+                                <StackLayout>
+                                    <Label Text="Potraviny" TextColor="Black" FontSize="20" FontFamily="RalewayB"  Margin="20,0"/>
+                                    <Label  Margin="20,0">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Kalorie - " TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span x:Name="calor" Text="0" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span Text=" kcal Sacharidy - " TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span x:Name="carbo" Text="0" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span Text=" g Bílkoviny - " TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span x:Name="prote" Text="0" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span Text=" g Tuky - " TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span x:Name="fats" Text="0" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span Text=" g" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <ListView x:Name="eatedToday" RowHeight="80" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                                                    <Label VerticalOptions="Center" Margin="15,0">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="16"/>
+                                                                <Span Text=": " TextColor="Black" FontSize="18" FontFamily="RalewayB"/>
+                                                                <Span Text="Kalorie - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text="{Binding Calory}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" kcal Sacharidy - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text="{Binding Carbohydrates}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" g Bílkoviny - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text="{Binding Proteins}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" g Tuky - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text="{Binding Fats}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" g" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </custom:CustomViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <BoxView BackgroundColor="#D9D9D9" HeightRequest="2" VerticalOptions="Start"/>
+                                    <Label Text="Tekutiny" TextColor="Black" FontSize="20" FontFamily="RalewayB"  Margin="20,0"/>
+                                    <Label Margin="20,0">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Množství - " TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span x:Name="water" Text="0" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                                <Span Text=" ml" TextColor="Black" FontSize="18" FontFamily="RalewayM"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <BoxView BackgroundColor="#D9D9D9" HeightRequest="2" VerticalOptions="Start"/>
+                                    <Label Text="Sporty" TextColor="Black" FontSize="20" FontFamily="RalewayB" Margin="20,0"/>
+                                    <AbsoluteLayout x:Name="absLayout" VerticalOptions="FillAndExpand">
+                                        <ListView x:Name="sportsToday" RowHeight="60" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand" HeightRequest="{Binding Path=Height, Source={x:Reference absLayout}}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <custom:CustomViewCell SelectedItemBackgroundColor="White">
+                                                    <Label VerticalOptions="Center" Margin="15,0">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="16"/>
+                                                                <Span Text=": " TextColor="Black" FontSize="18" FontFamily="RalewayB"/>
+                                                                <Span Text="Od - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span x:Name="startTime" Text="{Binding StartTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" Do - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span x:Name="endTime" Text="{Binding EndTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span Text=" Poznámka: " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                <Span x:Name="note" Text="{Binding Note}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </custom:CustomViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                        </AbsoluteLayout>
+                                </StackLayout>
                             </ScrollView>
                         </Frame>
                     </Frame>
