@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ApplicationIcon>fooddiaryicon.ico</ApplicationIcon>
+    <Authors>Vojtěch Werenyckyj</Authors>
+    <Copyright>VojtěchWerenyckyj</Copyright>
+    <Description>Food diary</Description>
+    <PackageIcon>fooddiaryicon.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/Werenyckyj/foodDiary.git</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,6 +21,10 @@
     <Compile Remove="Helpers\**" />
     <EmbeddedResource Remove="Helpers\**" />
     <None Remove="Helpers\**" />
+    <None Include="..\FoodDiary.Android\Resources\drawable\fooddiaryicon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
