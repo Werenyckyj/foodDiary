@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodDiary.Views.FoodPage"
              xmlns:custom="clr-namespace:FoodDiary.ViewModels"
+             xmlns:custom1="clr-namespace:FoodDiary.Models"
+             x:DataType="custom1:Foods"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>

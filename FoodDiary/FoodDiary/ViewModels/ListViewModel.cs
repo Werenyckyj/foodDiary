@@ -3,18 +3,32 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace FoodDiary.ViewModels
 {
-    class ListViewModel
+    class ListViewModel : BindableObject
     {
-        public ObservableCollection<ListModel> Food { get; set; }
+        public ObservableCollection<Foods> _Foods { get; set; }
+        public ObservableCollection<Foods> Foods
+        {
+            get
+            {
+                return _Foods;
+            }
+            set
+            {
+                _Foods = value;
+                OnPropertyChanged();
+            }
+        }
         public ListViewModel()
         {
-            Food = new ObservableCollection<ListModel>()
+            Foods = new ObservableCollection<Foods>()
             {
-                new ListModel(){},
+                new Foods(){},
             };
+            
         }
     }
 }

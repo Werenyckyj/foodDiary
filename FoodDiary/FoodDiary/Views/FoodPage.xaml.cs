@@ -1,6 +1,7 @@
 ﻿using FoodDiary.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,7 @@ namespace FoodDiary.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FoodPage : ContentPage
     {
-        public List<Foods> Food { get { return Count.todayEated; } }
+        public ObservableCollection<Foods> Food { get { return Count.todayEated; } }
         public FoodPage()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace FoodDiary.Views
             base.OnAppearing();
             Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
+            List<Foods> f = new List<Foods>();
             today.ItemsSource = Count.todayEated;
             calor.Text = Count.Calory.ToString();
             calorProgress.Progress = Count.Calory / 2440;
