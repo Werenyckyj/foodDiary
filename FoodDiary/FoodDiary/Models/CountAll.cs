@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace FoodDiary.Models
 {
     public static class CountAll
     {
-        public static List<Foods> todayEated = new List<Foods>();
-        public static List<Foods> todayDrenk = new List<Foods>();
-        public static List<Sport> todaySports = new List<Sport>();
+        public static ObservableCollection<Foods> todayEated = new ObservableCollection<Foods>();
+        public static ObservableCollection<Foods> todayDrenk = new ObservableCollection<Foods>();
+        public static ObservableCollection<Sport> todaySports = new ObservableCollection<Sport>();
         public static double Calory { get; set; }
         public static double Carbohydrates { get; set; }
         public static double Fats { get; set; }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace FoodDiary.Models
 {
     class CountSports
     {
-        public static List<Sport> todaySported = new List<Sport>();
+        public static ObservableCollection<Sport> todaySported = new ObservableCollection<Sport>();
         public async static void CountSport()
         {
             List<Sport> sports = new List<Sport>();
