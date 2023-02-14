@@ -40,7 +40,7 @@
                             BackgroundColor="White">
                             <StackLayout>
                                 <ScrollView>
-                                    <Editor x:Name="note" Margin="20" PlaceholderColor="Gray" VerticalOptions="EndAndExpand" Placeholder="Poznámka:"/>
+                                    <Editor x:Name="note" Margin="20" PlaceholderColor="Gray" VerticalOptions="Center" HeightRequest="400" Placeholder="Poznámka:"/>
                                 </ScrollView>
                             </StackLayout>
                         </Frame>

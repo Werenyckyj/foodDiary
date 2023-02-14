@@ -89,7 +89,7 @@
                                     <BoxView BackgroundColor="#D9D9D9" HeightRequest="2" VerticalOptions="Start"/>
                                     <Label Text="Sporty" TextColor="Black" FontSize="20" FontFamily="RalewayB" Margin="20,0"/>
                                     <AbsoluteLayout x:Name="absLayout" VerticalOptions="StartAndExpand">
-                                        <ListView x:Name="sportsToday" RowHeight="60" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand" HeightRequest="{Binding Path=Height, Source={x:Reference absLayout}}">
+                                        <ListView x:Name="sportsToday" RowHeight="150" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand" HeightRequest="{Binding Path=Height, Source={x:Reference absLayout}}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <custom:CustomViewCell SelectedItemBackgroundColor="White">

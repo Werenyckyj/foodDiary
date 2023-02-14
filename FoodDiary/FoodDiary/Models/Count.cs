@@ -18,6 +18,7 @@ namespace FoodDiary.Models
         public async static void CountFood()
         {
             List<DailyInfo> dailyInfo = new List<DailyInfo>();
+            //ObservableCollection<DailyInfo> dailyInfo = new ObservableCollection<DailyInfo>(dailyInfos);
             try
             {
                 dailyInfo = await App.Database.GetTodayFoodAsync();
