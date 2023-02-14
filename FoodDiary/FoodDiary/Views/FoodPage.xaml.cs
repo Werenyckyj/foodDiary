@@ -10,6 +10,10 @@ namespace FoodDiary.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FoodPage : ContentPage
     {
+        public string Calory { get; set; }
+        public string Carbohydrates { get; set; }
+        public string Proteins { get; set; }
+        public string Fats { get; set; }
         public ObservableCollection<Foods> Food { get { return Count.todayEated; } }
         public FoodPage()
         {
@@ -21,13 +25,17 @@ namespace FoodDiary.Views
             Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
             today.ItemsSource = Count.todayEated;
+            Calory = Count.Calory.ToString();
             calor.Text = Count.Calory.ToString();
             calorProgress.Progress = Count.CaloryProgress;
-            carbo.Text = Count.Carbohydrates.ToString();
+            Carbohydrates = Count.Carbohydrates.ToString();
+            carbo.Text = Count.Calory.ToString();
             protProgress.Progress = Count.ProtProgress;
-            prot.Text = Count.Proteins.ToString();
+            Proteins = Count.Proteins.ToString();
+            prot.Text = Count.Calory.ToString();
             carboProgress.Progress = Count.CarboProgress;
-            fats.Text = Count.Fats.ToString();
+            Fats = Count.Fats.ToString();
+            fats.Text = Count.Calory.ToString();
             fatsProgress.Progress = Count.FatsProgress;
         }
         public void Updater()
