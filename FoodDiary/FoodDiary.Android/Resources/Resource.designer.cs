@@ -11970,31 +11970,34 @@ namespace FoodDiary.Droid
 			public const int notify_panel_notification_icon_bg = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int plus = 2131165363;
+			public const int playstore = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int plus2 = 2131165364;
+			public const int plus = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int plus3 = 2131165365;
+			public const int plus2 = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int schedule = 2131165366;
+			public const int plus3 = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int sports = 2131165367;
+			public const int schedule = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int test_custom_background = 2131165368;
+			public const int sports = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int tooltip_frame_dark = 2131165369;
+			public const int test_custom_background = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int tooltip_frame_light = 2131165370;
+			public const int tooltip_frame_dark = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int water = 2131165371;
+			public const int tooltip_frame_light = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int water = 2131165372;
 			
 			static Drawable()
 			{
@@ -13453,14 +13456,17 @@ namespace FoodDiary.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F0C0000
-			public const int icon = 2131492864;
-			
 			// aapt resource value: 0x7F0C0001
-			public const int icon_round = 2131492865;
+			public const int icon = 2131492865;
 			
 			// aapt resource value: 0x7F0C0002
-			public const int launcher_foreground = 2131492866;
+			public const int icon_round = 2131492866;
+			
+			// aapt resource value: 0x7F0C0000
+			public const int ic_launcher = 2131492864;
+			
+			// aapt resource value: 0x7F0C0003
+			public const int launcher_foreground = 2131492867;
 			
 			static Mipmap()
 			{
