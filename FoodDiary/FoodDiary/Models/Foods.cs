@@ -9,21 +9,8 @@ using Xamarin.Forms;
 namespace FoodDiary.Models
 {
     [Table("Foods")]
-    public class Foods : BindableObject
+    public class Foods
     {
-        public ObservableCollection<Foods> _Food { get; set; }
-        public ObservableCollection<Foods> Food
-        {
-            get
-            {
-                return _Food;
-            }
-            set
-            {
-                _Food = value;
-                OnPropertyChanged();
-            }
-        }
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Name { get; set; }

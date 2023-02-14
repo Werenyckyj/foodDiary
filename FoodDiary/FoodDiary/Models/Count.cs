@@ -8,9 +8,13 @@ namespace FoodDiary.Models
         public static ObservableCollection<Foods> todayEated = new ObservableCollection<Foods>();
         public static ObservableCollection<Foods> todayDrenk = new ObservableCollection<Foods>();
         public static double Calory { get; set; }
+        public static double CaloryProgress { get; set; }
         public static double Carbohydrates { get; set; }
+        public static double CarboProgress { get; set; }
         public static double Fats { get; set; }
+        public static double FatsProgress { get; set; }
         public static double Proteins { get; set; }
+        public static double ProtProgress { get; set; }
         public async static void CountFood()
         {
             List<DailyInfo> dailyInfo = new List<DailyInfo>();
@@ -58,6 +62,10 @@ namespace FoodDiary.Models
                 Carbohydrates += food.Carbohydrates / 100 * food.Amount;
                 Fats += food.Fats / 100 * food.Amount;
                 Proteins += food.Proteins / 100 * food.Amount;
+                CaloryProgress = Calory/ 2440;
+                CarboProgress = Carbohydrates / 670;
+                FatsProgress = Fats / 70;
+                ProtProgress = Proteins / 80;
             }
         }
         public static double CountLiquid()

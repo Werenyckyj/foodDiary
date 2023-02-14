@@ -20,16 +20,15 @@ namespace FoodDiary.Views
             base.OnAppearing();
             Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
-            List<Foods> f = new List<Foods>();
             today.ItemsSource = Count.todayEated;
             calor.Text = Count.Calory.ToString();
-            calorProgress.Progress = Count.Calory / 2440;
+            calorProgress.Progress = Count.CaloryProgress;
             carbo.Text = Count.Carbohydrates.ToString();
-            protProgress.Progress = Count.Proteins / 80;
+            protProgress.Progress = Count.ProtProgress;
             prot.Text = Count.Proteins.ToString();
-            carboProgress.Progress = Count.Carbohydrates / 670;
+            carboProgress.Progress = Count.CarboProgress;
             fats.Text = Count.Fats.ToString();
-            fatsProgress.Progress = Count.Fats / 70;
+            fatsProgress.Progress = Count.FatsProgress;
         }
         public void Updater()
         {

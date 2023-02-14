@@ -14,6 +14,7 @@ namespace FoodDiary
         public MainPage()
         {
             InitializeComponent();
+            App.Database.InsertDefaultDatabase();
         }
 
         private async void btFood_Clicked(object sender, EventArgs e)

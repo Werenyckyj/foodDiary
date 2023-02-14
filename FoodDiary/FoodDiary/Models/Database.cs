@@ -17,7 +17,21 @@ namespace FoodDiary.Models
             database.CreateTableAsync<Foods>();
             database.CreateTableAsync<Sport>();
             database.CreateTableAsync<AllOverInfo>();
-            FillDatabase.InsertDefault(database);
+        }
+        public void InsertDefaultDatabase()
+        {
+            List<Foods> f = new List<Foods>();
+            try
+            {
+                f = GetFoodAsync().Result;
+            }
+            catch (Exception)
+            {
+                if (f.Count == 0)
+                {
+                    FillDatabase.InsertDefault(database);
+                }
+            }
         }
         public Task<List<Foods>> GetFoodAsync()
         {
