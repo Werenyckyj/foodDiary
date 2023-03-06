@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,6 +15,7 @@ namespace FoodDiary.Views
         public string Carbohydrates { get; set; }
         public string Proteins { get; set; }
         public string Fats { get; set; }
+
         public ObservableCollection<Foods> Food { get { return Count.todayEated; } }
         public FoodPage()
         {
@@ -21,7 +23,6 @@ namespace FoodDiary.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
             Count.CountFood();
             BindingContext = new ViewModels.ListViewModel();
             today.ItemsSource = Count.todayEated;
@@ -37,6 +38,7 @@ namespace FoodDiary.Views
             Fats = Count.Fats.ToString();
             fats.Text = Count.Calory.ToString();
             fatsProgress.Progress = Count.FatsProgress;
+            base.OnAppearing();
         }
         public void Updater()
         {
