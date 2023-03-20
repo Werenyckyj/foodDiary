@@ -28,8 +28,8 @@
                     <Frame x:Name="outerFrame" HasShadow="False" Padding="0"
                        HorizontalOptions="FillAndExpand" CornerRadius="30"
                        OutlineColor="#F0B723" BackgroundColor="#F0B723">
-                        <Frame x:Name="innerFrame"  Margin="2" Padding="0" HasShadow="False" 
-                            HorizontalOptions="FillAndExpand" CornerRadius="28" 
+                        <Frame x:Name="innerFrame"  Margin="2" Padding="5" HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" CornerRadius="28"
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
                             BackgroundColor="White">
                             <ScrollView>
@@ -89,25 +89,33 @@
                                     <BoxView BackgroundColor="#D9D9D9" HeightRequest="2" VerticalOptions="Start"/>
                                     <Label Text="Sporty" TextColor="Black" FontSize="20" FontFamily="RalewayB" Margin="20,0"/>
                                     <AbsoluteLayout x:Name="absLayout" VerticalOptions="StartAndExpand">
-                                        <ListView x:Name="sportsToday" RowHeight="150" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand" HeightRequest="{Binding Path=Height, Source={x:Reference absLayout}}">
+                                        <ListView x:Name="sportsToday" RowHeight="140" IsEnabled="False" Margin="20,0" VerticalOptions="FillAndExpand" HeightRequest="{Binding Path=Height, Source={x:Reference absLayout}}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <custom:CustomViewCell SelectedItemBackgroundColor="White">
-                                                    <Label VerticalOptions="Center" Margin="15,0">
-                                                        <Label.FormattedText>
-                                                            <FormattedString>
-                                                                <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="16"/>
-                                                                <Span Text=": " TextColor="Black" FontSize="18" FontFamily="RalewayB"/>
-                                                                <Span Text="Od - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                                <Span x:Name="startTime" Text="{Binding StartTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                                <Span Text=" Do - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                                <Span x:Name="endTime" Text="{Binding EndTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                                <Span Text=" Poznámka: " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                                <Span x:Name="note" Text="{Binding Note}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
-                                                            </FormattedString>
-                                                        </Label.FormattedText>
-                                                    </Label>
-                                                </custom:CustomViewCell>
+                                                        <StackLayout Orientation="Vertical">
+                                                            <Label VerticalOptions="Center" Margin="15,0">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{Binding Name}" FontFamily="RalewayB" TextColor="Black" FontSize="16"/>
+                                                                        <Span Text=": " TextColor="Black" FontSize="18" FontFamily="RalewayB"/>
+                                                                        <Span Text="Od - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                        <Span x:Name="startTime" Text="{Binding StartTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                        <Span Text=" Do - " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                        <Span x:Name="endTime" Text="{Binding EndTime}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                            <Label VerticalOptions="Center" Margin="12,0">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text=" Poznámka: " TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                        <Span x:Name="note" Text="{Binding Note}" TextColor="Black" FontSize="16" FontFamily="RalewayM"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                        </StackLayout>
+                                                    </custom:CustomViewCell>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                         </ListView>

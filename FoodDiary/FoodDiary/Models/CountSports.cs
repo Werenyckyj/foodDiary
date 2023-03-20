@@ -21,11 +21,13 @@ namespace FoodDiary.Models
             todaySported.Clear();
             foreach (var item in sports)
             {
+                DateTime startt = Convert.ToDateTime(item.StartTime);
+                DateTime endd = Convert.ToDateTime(item.EndTime);
                 todaySported.Add(new Sport
                 {
                     Name = item.Name,
-                    StartTime = item.StartTime,
-                    EndTime = item.EndTime,
+                    StartTime = startt.ToString("HH:mm"),
+                    EndTime = endd.ToString("HH:mm"),
                     Note = item.Note
                 });
             }

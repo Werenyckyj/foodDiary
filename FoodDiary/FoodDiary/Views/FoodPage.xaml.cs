@@ -30,13 +30,13 @@ namespace FoodDiary.Views
             calor.Text = Count.Calory.ToString();
             calorProgress.Progress = Count.CaloryProgress;
             Carbohydrates = Count.Carbohydrates.ToString();
-            carbo.Text = Count.Calory.ToString();
+            carbo.Text = Count.Carbohydrates.ToString();
             protProgress.Progress = Count.ProtProgress;
             Proteins = Count.Proteins.ToString();
-            prot.Text = Count.Calory.ToString();
+            prot.Text = Count.Proteins.ToString();
             carboProgress.Progress = Count.CarboProgress;
             Fats = Count.Fats.ToString();
-            fats.Text = Count.Calory.ToString();
+            fats.Text = Count.Proteins.ToString();
             fatsProgress.Progress = Count.FatsProgress;
             base.OnAppearing();
         }

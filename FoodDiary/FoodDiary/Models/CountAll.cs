@@ -46,11 +46,13 @@ namespace FoodDiary.Models
                     }
                     if (item.IsSport == true)
                     {
+                        DateTime startt = Convert.ToDateTime(item.StartTime);
+                        DateTime endd = Convert.ToDateTime(item.EndTime);
                         todaySports.Add(new Sport
                         {
                             Name = item.Name,
-                            StartTime = item.StartTime,
-                            EndTime = item.EndTime,
+                            StartTime = startt.ToString("HH:mm"),
+                            EndTime = endd.ToString("HH:mm"),
                             Note = item.Note
                         });
                         continue;

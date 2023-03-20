@@ -16,6 +16,23 @@ namespace FoodDiary
             InitializeComponent();
             App.Database.InsertDefaultDatabase();
         }
+        protected async override void OnAppearing()
+        {
+            try
+            {
+                List<DateTime> today = await App.Database.GetTheDay();
+                if (today[0] != DateTime.Today)
+                {
+                    App.Database.DeleteToday();
+                    App.Database.SaveTheDay(DateTime.Today);
+                }
+            }
+            catch
+            {
+                App.Database.SaveTheDay(DateTime.Today);
+            }
+            base.OnAppearing();
+        }
 
         private async void btFood_Clicked(object sender, EventArgs e)
         {
