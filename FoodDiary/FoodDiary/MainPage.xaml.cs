@@ -22,7 +22,7 @@ namespace FoodDiary
             try
             {
                 List<DateTody> today = await App.Database.GetTheDay();
-                if (today[0].d.Date != DateTime.MaxValue)
+                if (today[0].d.Date != DateTime.Today)
                 {
                     App.Database.DeleteToday();
                     App.Database.SaveTheDay(DateTime.Today);
