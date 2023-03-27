@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using FoodDiary.Views;
+using FoodDiary.Models;
 
 namespace FoodDiary
 {
@@ -20,14 +21,14 @@ namespace FoodDiary
         {
             try
             {
-                List<DateTime> today = await App.Database.GetTheDay();
-                if (today[0] != DateTime.Today)
+                List<DateTody> today = await App.Database.GetTheDay();
+                if (today[0].d.Date != DateTime.MaxValue)
                 {
                     App.Database.DeleteToday();
                     App.Database.SaveTheDay(DateTime.Today);
                 }
             }
-            catch
+            catch(Exception)
             {
                 App.Database.SaveTheDay(DateTime.Today);
             }

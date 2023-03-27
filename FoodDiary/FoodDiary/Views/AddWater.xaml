@@ -8,7 +8,7 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
-                    <RowDefinition Height="550"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#308EFC"/>

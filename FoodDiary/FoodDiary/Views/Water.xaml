@@ -7,10 +7,6 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="75*"/>
                     <RowDefinition Height="240*"/>

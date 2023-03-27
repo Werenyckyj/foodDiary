@@ -12,8 +12,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="85"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="700*"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
                 <ImageButton x:Name="btBack" Source="arrow.png" Padding="25" Margin="0,0,100,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="0" Clicked="btBack_Clicked"/>

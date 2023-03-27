@@ -6,6 +6,7 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout BackgroundColor="White">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -27,7 +28,8 @@
                     </syncfusion:SfCalendar>
                     <Frame x:Name="outerFrame" HasShadow="False" Padding="0"
                        HorizontalOptions="FillAndExpand" CornerRadius="30"
-                       OutlineColor="#F0B723" BackgroundColor="#F0B723">
+                       OutlineColor="#F0B723" BackgroundColor="#F0B723"
+                       HeightRequest="300">
                         <Frame x:Name="innerFrame"  Margin="2" Padding="5" HasShadow="False" 
                             HorizontalOptions="FillAndExpand" CornerRadius="28"
                             OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" 
@@ -127,5 +129,6 @@
                 </StackLayout>
             </Grid>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

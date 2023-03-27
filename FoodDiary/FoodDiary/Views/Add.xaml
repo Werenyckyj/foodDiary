@@ -4,11 +4,12 @@
              x:Class="FoodDiary.Views.Add"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
+        <ScrollView BackgroundColor="White">
+        <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
-                    <RowDefinition Height="550"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
@@ -77,9 +78,10 @@
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Save" Text="Uložit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Save_Clicked"/>
-                <Button x:Name="Back" Text="Zrušit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
+                <Button x:Name="Save" Text="Uložit" Margin="30,0,30,20" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Save_Clicked"/>
+                <Button x:Name="Back" Text="Zrušit" Margin="30,0,30,20 " TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
             </Grid>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

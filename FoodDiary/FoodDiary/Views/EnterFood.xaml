@@ -8,7 +8,7 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
-                    <RowDefinition Height="550"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
@@ -27,7 +27,7 @@
                     </Grid>
                 </StackLayout>
             </Grid>
-            <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
+            <Grid Grid.Row="2" Margin="20,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="3*"/>
