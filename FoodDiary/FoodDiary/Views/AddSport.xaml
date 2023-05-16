@@ -50,8 +50,8 @@
             </Grid>
             <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="Add" Text="Přidat" Margin="20,0,20,20" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#721616" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
                 <Button x:Name="Back" Text="Zrušit" Margin="20,0,20,20" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#721616" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>

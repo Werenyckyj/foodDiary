@@ -9,7 +9,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#308EFC"/>
                 <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#308EFC" Grid.Column="1" Clicked="btQ_Clicked"/>
@@ -17,9 +17,9 @@
                     <Label x:Name="name" Text="Voda"  TextColor="Black" FontSize="40" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="32*"/>
-                            <ColumnDefinition Width="30*"/>
-                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Množství:" Margin="0,30" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                         <Entry x:Name="input" TextColor="Black" Margin="0,30" Grid.Column="1" PlaceholderColor="Black" VerticalOptions="CenterAndExpand" Keyboard="Numeric"/>
@@ -29,8 +29,8 @@
             </Grid>
             <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="Add" Text="Přidat" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#164072" BorderWidth="2" CornerRadius="15" Clicked="Add_Clicked"/>
                 <Button x:Name="Back" Text="Zrušit" Margin="20,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#164072" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>

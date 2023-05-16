@@ -9,7 +9,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#11B403"/>
                 <ImageButton x:Name="btQ" Source="doubtsbutton.png" Padding="20" Margin="100,0,0,0" CornerRadius="0" BackgroundColor="#11B403" Grid.Column="1" Clicked="btQ_Clicked"/>
@@ -18,32 +18,32 @@
                     <Label Text="Údaje na 100 g"  TextColor="SlateGray" FontSize="20" HorizontalTextAlignment="Center" FontFamily="RalewayM"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="28*"/>
-                            <ColumnDefinition Width="70*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Kalorie:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                         <Entry x:Name="inputCal" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="28*"/>
-                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Sacharidy:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                         <Entry x:Name="inputCar" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25*"/>
-                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Bílkoviny:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                         <Entry x:Name="inputPro" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
                     </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25*"/>
-                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tuky:" Margin="0,5" Grid.Column="0" TextColor="Black" FontFamily="RalewayM" FontSize="25"/>
                         <Entry x:Name="inputFat" Margin="0,5" Grid.Column="1" TextColor="Black" PlaceholderColor="Gray" VerticalOptions="CenterAndExpand" Text="{Binding BoundValue}" Keyboard="Numeric" TextChanged="input_TextChanged"/>
@@ -52,8 +52,8 @@
             </Grid>
             <Grid Grid.Row="2" Margin="20,0" VerticalOptions="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="Save" Text="Uložit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="0" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Save_Clicked"/>
                 <Button x:Name="Back" Text="Zrušit" Margin="30,0" TextColor="Black" FontFamily="RalewayM" FontSize="15" Grid.Column="1" BackgroundColor="White" BorderColor="#045202" BorderWidth="2" CornerRadius="15" Clicked="Back_Clicked"/>
